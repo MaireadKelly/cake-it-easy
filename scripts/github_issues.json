@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Setup Django Project",
+    "body": "As a developer, I want to set up the Django project with all initial dependencies and configurations so the base app is ready for development.",
+    "labels": [
+      "must-have",
+      "user story",
+      "backend"
+    ],
+    "milestone": "1. Project Setup"
+  },
+  {
+    "title": "Create Base Models",
+    "body": "As a developer, I want to define models for cakes, orders, users, and reviews so the database schema supports the core features.",
+    "labels": [
+      "must-have",
+      "user story",
+      "backend"
+    ],
+    "milestone": "2. Core Models & Admin"
+  },
+  {
+    "title": "Setup Admin Panel",
+    "body": "As a site admin, I want to manage cakes, orders, and users through Django admin for backend management.",
+    "labels": [
+      "should-have",
+      "admin",
+      "backend"
+    ],
+    "milestone": "2. Core Models & Admin"
+  },
+  {
+    "title": "Implement User Registration and Login",
+    "body": "As a customer, I want to create an account and securely login/logout so I can manage my orders and profile.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "3. Authentication"
+  },
+  {
+    "title": "Design Product List Page",
+    "body": "As a user, I want to browse available cakes with image, title, and price so I can select one to view more details.",
+    "labels": [
+      "must-have",
+      "frontend",
+      "user story"
+    ],
+    "milestone": "4. Storefront UI"
+  },
+  {
+    "title": "Integrate Stripe Payment",
+    "body": "As a customer, I want to securely pay for my order using Stripe so my transaction is safe and seamless.",
+    "labels": [
+      "must-have",
+      "user story",
+      "backend"
+    ],
+    "milestone": "5. Cart & Checkout"
+  },
+  {
+    "title": "Add Customer Reviews",
+    "body": "As a user, I want to leave and read reviews on cake listings so I can make informed decisions.",
+    "labels": [
+      "could-have",
+      "user story"
+    ],
+    "milestone": "6. User Profiles & Reviews"
+  },
+  {
+    "title": "Deploy to Heroku",
+    "body": "As a developer, I want to deploy the app to Heroku so users can access it online.",
+    "labels": [
+      "must-have",
+      "backend",
+      "enhancement"
+    ],
+    "milestone": "7. Testing & Deployment"
+  }
+]

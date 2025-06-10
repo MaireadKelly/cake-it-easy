@@ -1,0 +1,44 @@
+[
+  {
+    "title": "1. Project Setup",
+    "state": "open",
+    "description": "Initial repo setup, environment, CI, and configuration.",
+    "due_on": "2025-06-06T23:59:00Z"
+  },
+  {
+    "title": "2. Core Models & Admin",
+    "state": "open",
+    "description": "Models, database, admin panel, and fixtures.",
+    "due_on": "2025-06-08T23:59:00Z"
+  },
+  {
+    "title": "3. Authentication",
+    "state": "open",
+    "description": "User auth, registration, login/logout, messages.",
+    "due_on": "2025-06-10T23:59:00Z"
+  },
+  {
+    "title": "4. Storefront UI",
+    "state": "open",
+    "description": "Home, product list/detail pages, contact UI.",
+    "due_on": "2025-06-12T23:59:00Z"
+  },
+  {
+    "title": "5. Cart & Checkout",
+    "state": "open",
+    "description": "Cart management, Stripe integration, order confirmation.",
+    "due_on": "2025-06-14T23:59:00Z"
+  },
+  {
+    "title": "6. User Profiles & Reviews",
+    "state": "open",
+    "description": "User dashboard, order history, editable profiles.",
+    "due_on": "2025-06-16T23:59:00Z"
+  },
+  {
+    "title": "7. Testing & Deployment",
+    "state": "open",
+    "description": "Unit/integration testing, CI setup, Heroku/Render deployment.",
+    "due_on": "2025-06-18T23:59:00Z"
+  }
+]

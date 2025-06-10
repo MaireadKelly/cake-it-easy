@@ -1,0 +1,75 @@
+[
+  {
+    "title": "User registration and authentication",
+    "body": "As a new user, I want to register and log in securely so that I can access personalised features.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "User Authentication"
+  },
+  {
+    "title": "Product browsing and filtering",
+    "body": "As a customer, I want to browse available cakes by category or keyword so that I can quickly find what I want.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "MVP Setup"
+  },
+  {
+    "title": "Product detail page",
+    "body": "As a customer, I want to view detailed information about a cake so I can decide whether to buy it.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "MVP Setup"
+  },
+  {
+    "title": "Order a custom cake",
+    "body": "As a customer, I want to customise a cake and preview it so that I can personalise my order.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "Custom Cakes"
+  },
+  {
+    "title": "Add to cart and checkout",
+    "body": "As a customer, I want to add items to a cart and securely checkout using Stripe.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "Cart and Checkout"
+  },
+  {
+    "title": "View order confirmation and delivery",
+    "body": "As a customer, I want to receive a confirmation and delivery estimate after checkout.",
+    "labels": [
+      "must-have",
+      "user story"
+    ],
+    "milestone": "Delivery Logic"
+  },
+  {
+    "title": "Admin product and order management",
+    "body": "As an admin, I want to manage products and view customer orders through a dashboard.",
+    "labels": [
+      "must-have",
+      "user story",
+      "admin"
+    ],
+    "milestone": "Admin Dashboard"
+  },
+  {
+    "title": "UI and styling enhancements",
+    "body": "As a user, I want a polished and accessible UI experience across devices.",
+    "labels": [
+      "should-have",
+      "user story"
+    ],
+    "milestone": "UI Polish & Accessibility"
+  }
+]

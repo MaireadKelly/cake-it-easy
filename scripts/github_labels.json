@@ -1,0 +1,57 @@
+[
+  {
+    "name": "must-have",
+    "color": "b60205",
+    "description": "Essential feature"
+  },
+  {
+    "name": "should-have",
+    "color": "1d76db",
+    "description": "Important but not essential"
+  },
+  {
+    "name": "could-have",
+    "color": "0e8a16",
+    "description": "Nice to have"
+  },
+  {
+    "name": "wont-have",
+    "color": "cccccc",
+    "description": "Not required at this time"
+  },
+  {
+    "name": "user story",
+    "color": "5319e7",
+    "description": "A user-centric feature or requirement"
+  },
+  {
+    "name": "admin",
+    "color": "f9d0c4",
+    "description": "Administrator functionality"
+  },
+  {
+    "name": "testing",
+    "color": "fef2c0",
+    "description": "Testing tasks or requirements"
+  },
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Something isn't working"
+  },
+  {
+    "name": "frontend",
+    "color": "fbca04",
+    "description": "UI and visual elements"
+  },
+  {
+    "name": "backend",
+    "color": "0366d6",
+    "description": "Server-side logic or DB"
+  },
+  {
+    "name": "enhancement",
+    "color": "84b6eb",
+    "description": "Improving an existing feature"
+  }
+]
