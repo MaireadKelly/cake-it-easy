@@ -1,0 +1,26 @@
+[
+    {
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "Birthday Cakes",
+            "slug": "birthday-cakes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "Wedding Cakes",
+            "slug": "wedding-cakes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "Cupcakes",
+            "slug": "cupcakes"
+        }
+    }
+]

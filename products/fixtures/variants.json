@@ -1,0 +1,29 @@
+[
+    {
+        "model": "products.productvariant",
+        "pk": 1,
+        "fields": {
+            "product": 1,
+            "size": "6 inch",
+            "price": "25.00"
+        }
+    },
+    {
+        "model": "products.productvariant",
+        "pk": 2,
+        "fields": {
+            "product": 1,
+            "size": "8 inch",
+            "price": "30.00"
+        }
+    },
+    {
+        "model": "products.productvariant",
+        "pk": 3,
+        "fields": {
+            "product": 2,
+            "size": "Box of 6",
+            "price": "18.00"
+        }
+    }
+]

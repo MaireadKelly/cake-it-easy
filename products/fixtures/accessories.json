@@ -1,0 +1,18 @@
+[
+    {
+        "model": "products.accessory",
+        "pk": 1,
+        "fields": {
+            "name": "Candles",
+            "price": "3.99"
+        }
+    },
+    {
+        "model": "products.accessory",
+        "pk": 2,
+        "fields": {
+            "name": "Toppers",
+            "price": "5.50"
+        }
+    }
+]

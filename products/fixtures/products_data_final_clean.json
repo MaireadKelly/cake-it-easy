@@ -1,0 +1,24 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Chocolate Fudge Cake",
+      "slug": "chocolate-fudge-cake",
+      "description": "A rich chocolate cake with fudge frosting.",
+      "category": 1,
+      "price": "25.00"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Vanilla Wedding Cake",
+      "slug": "vanilla-wedding-cake",
+      "description": "Classic vanilla wedding cake with buttercream.",
+      "category": 2,
+      "price": "120.00"
+    }
+  }
+]

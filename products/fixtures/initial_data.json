@@ -1,0 +1,50 @@
+[
+    {
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "Birthday Cakes",
+            "slug": "birthday-cakes"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "Wedding Cakes",
+            "slug": "wedding-cakes"
+        }
+    },
+    {
+        "model": "products.dietarytag",
+        "pk": 1,
+        "fields": {
+            "name": "Vegan",
+            "slug": "vegan"
+        }
+    },
+    {
+        "model": "products.dietarytag",
+        "pk": 2,
+        "fields": {
+            "name": "Gluten-Free",
+            "slug": "gluten-free"
+        }
+    },
+    {
+        "model": "products.accessory",
+        "pk": 1,
+        "fields": {
+            "name": "Candles",
+            "price": "2.50"
+        }
+    },
+    {
+        "model": "products.accessory",
+        "pk": 2,
+        "fields": {
+            "name": "Toppers",
+            "price": "3.75"
+        }
+    }
+]
