@@ -23,8 +23,11 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     variants = product.variants.all()
     accessories = product.accessories.all()
+    related_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:3]
+    
     return render(request, 'products/product_detail.html', {
         'product': product,
         'variants': variants,
         'accessories': accessories,
+        'related_products': related_products
     })

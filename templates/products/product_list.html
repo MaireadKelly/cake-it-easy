@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="row">
+    <!-- Sidebar Filters -->
+    <div class="col-md-3">
+      <h5>Filter by Category</h5>
+      <ul class="list-group mb-4">
+        <li class="list-group-item">
+          <a href="{% url 'product_list' %}">All Categories</a>
+        </li>
+        {% for category in categories %}
+        <li class="list-group-item">
+          <a href="?category={{ category.slug }}">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h5>Filter by Dietary Tag</h5>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="{% url 'product_list' %}">All Tags</a>
+        </li>
+        {% for tag in dietary_tags %}
+        <li class="list-group-item">
+          <a href="?diet={{ tag.slug }}">{{ tag.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="col-md-9">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for product in products %}
+        <div class="col">
+          <div class="card h-100">
+            {% if product.image %}
+  <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+{% else %}
+  <div class="bg-gray-100 h-40 flex items-center justify-center text-gray-400">
+    No Image
+  </div>
+{% endif %}
+
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">
+                €{{ product.price }}
+                {% if product.description %}<br>{{ product.description|truncatewords:15 }}{% endif %}
+              </p>
+            </div>
+            <div class="card-footer text-end">
+              <a href="{% url 'product_detail' product.slug %}" class="btn btn-primary">View</a>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <p>No products found.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

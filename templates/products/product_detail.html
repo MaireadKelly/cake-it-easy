@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mx-auto p-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-2xl shadow-md w-full" />
+      {% else %}
+        <div class="bg-gray-100 h-64 rounded-2xl flex items-center justify-center text-gray-500">
+          No Image Available
+        </div>
+      {% endif %}
+    </div>
+    <div class="space-y-4">
+      <h1 class="text-3xl font-bold">{{ product.name }}</h1>
+      <p class="text-xl text-pink-600 font-semibold">&euro;{{ product.price }}</p>
+      <p class="text-gray-700">{{ product.description }}</p>
+      <div>
+        <strong>Category:</strong> {{ product.category.name }}
+      </div>
+      {% if product.dietary_tags.exists %}
+        <div>
+          <strong>Dietary Tags:</strong>
+          {% for tag in product.dietary_tags.all %}
+            <span class="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm mr-2">{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="POST" action="{% url 'add_to_bag' product.id %}">
+        {% csrf_token %}
+
+        <label class="block mt-4 font-medium">Size:</label>
+        {{ form.variant }}
+
+        {% if form.accessories %}
+          <label class="block mt-4 font-medium">Accessories:</label>
+          {{ form.accessories }}
+        {% endif %}
+
+        <label class="block mt-4 font-medium">Quantity:</label>
+        {{ form.quantity }}
+
+        <div class="mt-6 flex gap-4">
+          <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-2xl shadow">
+            Add to Bag
+          </button>
+          <a href="{% url 'product_list' %}" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-2xl shadow">
+            Back to Products
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% if related_products.exists %}
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-4">Related Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {% for related in related_products %}
+          <a href="{% url 'product_detail' related.slug %}" class="border p-4 rounded-lg hover:shadow-md transition">
+            {% if related.image %}
+              <img src="{{ related.image.url }}" alt="{{ related.name }}" class="rounded-xl mb-2">
+            {% endif %}
+            <h3 class="font-semibold text-lg">{{ related.name }}</h3>
+            <p class="text-pink-600 font-medium">&euro;{{ related.price }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,9 +1,84 @@
-<html>
-    <head>
-        <title>Cake It Easy</title>
-    </head>
-    <body>
-        {% block content %}
-        {% endblock %}
-    </body>
-    </html>
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake It Easy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-pink-500 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-xl font-bold">Cake It Easy</a>
+      <div class="flex gap-6 items-center">
+        <a href="/products/" class="hover:underline">Products</a>
+        <a href="/bag/" class="relative hover:underline">
+          Bag
+          {% with request.session.bag|length as bag_count %}
+          {% if bag_count > 0 %}
+            <span class="absolute -top-2 -right-3 bg-white text-pink-600 rounded-full text-xs px-2">{{ bag_count }}</span>
+          {% endif %}
+          {% endwith %}
+        </a>
+        <a href="#" class="hover:underline">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Splash Modal -->
+  {% if request.path == "/" and request.COOKIES.welcome_popup != "dismissed" %}
+  <div id="splash" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+    <div class="bg-white p-8 rounded-xl shadow-lg max-w-md text-center relative">
+      <button id="splash-close-btn"
+              class="absolute top-2 right-2 text-gray-400 hover:text-gray-800 text-2xl leading-none">&times;</button>
+      <h2 class="text-xl font-bold mb-2">🎉 Welcome to Cake It Easy!</h2>
+      <p class="mb-4">Register for our newsletter and get <strong>10% off</strong> your first order!</p>
+      <button id="splash-cta-btn"
+              class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-xl">
+        Claim Now
+      </button>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Toast Messages -->
+  <div class="fixed top-4 right-4 z-50 space-y-2">
+    {% if messages %}
+      {% for message in messages %}
+      <div class="bg-green-100 text-green-900 px-4 py-2 rounded shadow">
+        {{ message }}
+      </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-8 px-4">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 my-8">
+    &copy; {{ year|default:2025 }} Cake It Easy. All rights reserved.
+  </footer>
+
+  <script>
+    function dismissSplash() {
+      const splash = document.getElementById('splash');
+      if (splash) splash.remove();
+      document.cookie = "welcome_popup=dismissed; path=/";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.getElementById('splash-close-btn');
+      const ctaBtn = document.getElementById('splash-cta-btn');
+
+      if (closeBtn) closeBtn.addEventListener('click', dismissSplash);
+      if (ctaBtn) ctaBtn.addEventListener('click', dismissSplash);
+    });
+  </script>
+</body>
+</html>

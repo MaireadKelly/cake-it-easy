@@ -11,8 +11,8 @@
         "model": "products.accessory",
         "pk": 2,
         "fields": {
-            "name": "Toppers",
-            "price": "5.50"
+            "name": "Cake Topper",
+            "price": "6.50"
         }
     }
 ]
